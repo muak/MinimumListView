@@ -58,19 +58,13 @@ namespace Sample.iOS
         //セクションの数
         public override nint NumberOfSections(UITableView tableView)
         {
-            return 1;
+            return 1;  
         }
 
         //1セクションの行数
         public override nint RowsInSection(UITableView tableview, nint section)
         {
             return _source.Count;
-        }
-
-        //セクションタイトル
-        public override string TitleForHeader(UITableView tableView, nint section)
-        {
-            return null;
         }
 
         protected override void Dispose(bool disposing)
