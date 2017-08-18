@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms" 
+	xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" 
+	xmlns:cr="clr-namespace:Sample;assembly=Sample"
+	xmlns:prism="clr-namespace:Prism.Mvvm;assembly=Prism.Forms" 
+	prism:ViewModelLocator.AutowireViewModel="True"
+
+	x:Class="Sample.Views.MainPage" Title="MainPage">
+	<cr:MinimumListView VerticalOptions="FillAndExpand" ItemsSource="{Binding Items}">
+		<ListView.ItemTemplate>
+			<DataTemplate>
+<!--				<TextCell Text="{Binding Name}" Detail="{Binding Age}" TextColor="Blue" />-->
+				<ViewCell>
+					<StackLayout Orientation="Horizontal" Padding="20,0,0,0">
+						<BoxView Color="Green" HeightRequest="30" WidthRequest="30" VerticalOptions="Center" />
+						<StackLayout Orientation="Vertical" Spacing="0" HorizontalOptions="FillAndExpand" VerticalOptions="Center">
+							<Label Text="{Binding Name}" TextColor="Blue" />
+							<Label Text="{Binding Age}" TextColor="Red" />
+						</StackLayout>
+					</StackLayout>
+				</ViewCell>
+			</DataTemplate>
+		</ListView.ItemTemplate>
+	</cr:MinimumListView>
+
+
+</ContentPage>
