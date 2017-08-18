@@ -43,7 +43,8 @@ namespace Sample.iOS
         {
             //FormsCell取得 TemplatedItemsはEditorBrowsableState.Neverなのでインテリセンスに出てこない
             var cell = _listview.TemplatedItems[indexPath.Row];
-
+            //var cell = (Cell)_listview.ItemTemplate.CreateContent(); //XF2.3.4まででもこの方法で取れるがViewCellがうまく表示されない
+           
             var id = cell.GetType().FullName;
             var renderer = (CellRenderer)Xamarin.Forms.Internals.Registrar.Registered.GetHandler<IRegisterable>(cell.GetType());
 

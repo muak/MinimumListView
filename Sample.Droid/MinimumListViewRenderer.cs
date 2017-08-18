@@ -20,21 +20,20 @@ namespace Sample.Droid
                 var listview = new Android.Widget.ListView(Context);
                 listview.Focusable = false;
                 listview.DescendantFocusability = DescendantFocusability.AfterDescendants;
-                listview.Adapter = new AiListViewAdapter(Context, Element);
+                listview.Adapter = new MyListViewAdapter(Context, Element);
                 AutoPackage = false;
                 SetNativeControl(listview);
             }
         }
-
     }
 
-    public class AiListViewAdapter : BaseAdapter<object>
+    public class MyListViewAdapter : BaseAdapter<object>
     {
         MinimumListView _listview;
         IList _source;
         Context _context;
 
-        public AiListViewAdapter(Context context, MinimumListView listview)
+        public MyListViewAdapter(Context context, MinimumListView listview)
         {
             _context = context;
             _listview = listview;
